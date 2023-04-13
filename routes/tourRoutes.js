@@ -42,7 +42,9 @@ router
   .get(tourController.getTour)
   .patch(
     authController.protect,
-    authController.restrictTo('admin', 'lead-guide'),
+    authController.restrictTo('admin', 'lead-guide'), 
+    tourController.uploadTourImages, 
+    tourController.resizeTourImage,
     tourController.updateTour
   )
   .delete(
